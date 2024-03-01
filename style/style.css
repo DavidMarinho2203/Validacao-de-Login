@@ -1,11 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: var(--font-principal);
 }
 
-:root{
+:root {
     --header-background: #121113;
     --main-background: #262526;
     --form-background: #F4F3F4;
@@ -15,7 +15,7 @@
 
 }
 
-.header__container{
+.header__container {
     width: 100%;
     height: 120px;
     background-color: var(--header-background);
@@ -26,7 +26,7 @@
     align-items: center;
 }
 
-.main__container{
+.main__container {
     background-color: var(--main-background);
     height: 100vh;
     display: flex;
@@ -37,7 +37,7 @@
     row-gap: 30px;
 }
 
-.main__form{
+.main__form {
     width: 30rem;
     height: auto;
     padding: 30px 20px 20px;
@@ -48,18 +48,31 @@
     row-gap: 5px;
 }
 
-.form__title{
+.form__title {
     text-align: center;
 }
 
-.form__input{
+.form__inputLabel{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    row-gap: 5px;
+    text-align: start;
+}
+
+.form__label{
+    width: fit-content;
+}
+
+.form__input {
     height: 2.5rem;
     font-size: 1.3rem;
     border-radius: .3rem;
     padding-left: 5px;
 }
 
-.form__submit{
+.form__submit {
     background-color: var(--button-backgrond);
     color: var(--color-01);
     padding: 15px 0;
@@ -70,13 +83,20 @@
 }
 
 
-.form__cadastro{
+.form__cadastro {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.cadastro__link{
     text-align: right;
     color: var(--button-backgrond);
     text-decoration: none;
-    margin-right: 5px;
 }
-.form__msg{
+
+.form__msg {
     margin-top: 0px;
     padding: 10px 10px 10px;
     color: var(--color-01);
@@ -85,12 +105,12 @@
     color: var(--color-01);
 }
 
-.error{
+.error {
     background-color: brown;
 }
 
 @media screen and (max-width: 510px) {
-    .main__form{
+    .main__form {
         width: 80%;
         border: 1px solid red;
     }

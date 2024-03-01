@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,25 +8,30 @@
     <link rel="stylesheet" href="../style/style.css">
     <script type="module" src="/pagina-cadastro/pgCria.js" defer></script>
 </head>
+
 <body>
     <header class="header__container">
         <h1>Validação de Email</h1>
     </header>
     <main class="main__container">
         <form class="main__form">
-            <h2 class="form__title">Cadastro de login</h2>
-            
-            <label for="email">Email:</label>
+            <h2 class="form__title">Cadastro</h2>
+            <div class="form__inputLabel">
+            <label class="form__label" for="email">Email:</label>
             <input class="form__input" type="text" name="email" id="email">
-            <label for="passwordum">Senha:</label>
+            <label class="form__label" for="passwordum">Senha:</label>
             <input class="form__input" type="password" name="password" id="passwordUm">
-            <label for="passwordDois">Confirmação da senha:</label>
+            <label class="form__label" for="passwordDois">Confirmação da senha:</label>
             <input class="form__input" type="password" name="password" id="passwordDois">
             <div class="form__msg"></div>
             <input id="submit-login" class="form__submit" type="submit" value="Login" href>
-            <a class="form__cadastro" href="../index.html">Login</a>
+            </div>
+            <div class="form__cadastro">
+                <a class="cadastro__link" href="../index.html">Login</a>
+            </div>
         </form>
 
     </main>
 </body>
+
 </html>

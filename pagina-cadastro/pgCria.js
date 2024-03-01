@@ -16,23 +16,29 @@ Submit_login.addEventListener('click', (e) => {
     if (valueEmail == '' || valuePasswordUm == '' || valuePasswordDois == '') {
         menssagemError.textContent = 'Por favor, preencha todos os campos!'
         menssagemError.classList.add('error')
-        menssagemError.style.color = '#121113'
+        emailInput.style.borderColor = 'red'
+        passwordInputUm.style.borderColor = 'red'
+        passwordInputDois.style.borderColor = 'red'
+
 
         setTimeout(() => {
             menssagemError.textContent = ''
             menssagemError.classList.remove('error')
-        }, 3000)
+            emailInput.style.borderColor = ''
+            passwordInputUm.style.borderColor = ''
+            passwordInputDois.style.borderColor = ''
+        }, 2500)
 
         return;
     }
 
     if (sessionStorage.getItem('email') == emailInput.value) {
-        menssagemError.textContent = 'Email já cadastrado, voltando para o login!'
-        menssagemError.style.color = '#121113'
+        menssagemError.textContent = 'Email já cadastrado!'
+        menssagemError.style.backgroundColor = '#121113'
 
         setTimeout(() => {
             menssagemError.textContent = ''
-            window.location.href = '/index.html'
+            menssagemError.style.backgroundColor = ''
         }, 3000)
 
         emailInput.value = ''
@@ -40,7 +46,7 @@ Submit_login.addEventListener('click', (e) => {
         passwordInputDois.value = ''
 
         return;
-    }else if(valuePasswordUm === valuePasswordDois) {
+    } else if (valuePasswordUm === valuePasswordDois) {
 
         menssagemError.textContent = 'Cadastrado com sucesso!'
         menssagemError.style.color = '#121113'
@@ -50,7 +56,6 @@ Submit_login.addEventListener('click', (e) => {
 
         setTimeout(() => {
             menssagemError.textContent = ''
-            window.location.href = '/index.html'
         }, 3000)
 
         emailInput.value = ''
@@ -58,7 +63,7 @@ Submit_login.addEventListener('click', (e) => {
         passwordInputDois.value = ''
 
 
-    }else {
+    }  else {
         menssagemError.textContent = 'Senhas não estão iguais!'
         menssagemError.style.color = '#121113'
         emailInput.value = ''
