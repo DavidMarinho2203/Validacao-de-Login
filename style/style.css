@@ -112,6 +112,5 @@
 @media screen and (max-width: 510px) {
     .main__form {
         width: 80%;
-        border: 1px solid red;
     }
 }
