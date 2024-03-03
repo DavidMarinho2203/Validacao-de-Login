@@ -47,11 +47,21 @@ Submit_login.addEventListener('click', (e) => {
         // Verificar a se a senha está correta
         const emailJaCadastrado = users.find(element => element.email == emailProcurado)
 
-        if (emailJaCadastrado.senha == senhaDigitada){
+        if (emailJaCadastrado.senha == senhaDigitada) {
             window.location.href = '/pagina-logado/logado.html'
+        } else {
+            menssagemError.textContent = 'Senha incorreta!'
+            menssagemError.classList.add('error')
+            passwordInput.style.borderColor = 'red'
+
+            setTimeout(() => {
+                menssagemError.classList.remove('error')
+                menssagemError.textContent = ''
+                passwordInput.style.borderColor = ''
+            }, 3000)
         }
 
-    }else{
+    } else {
         menssagemError.textContent = 'Email inexistente'
         menssagemError.classList.add('error')
         emailInput.style.borderColor = 'red'
@@ -64,7 +74,7 @@ Submit_login.addEventListener('click', (e) => {
             passwordInput.style.borderColor = ''
             window.location.href = './pagina-cadastro/criarLogin.html'
         }, 2000)
-        
+
     }
 
 })
